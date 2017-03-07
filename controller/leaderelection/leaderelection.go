@@ -27,7 +27,7 @@ import (
 	"fmt"
 	"reflect"
 	"time"
-	rl "hostpath-provisioner/controller/leaderelection/resourcelock"
+	rl "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection/resourcelock"
 	// rl "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection/resourcelock"
 	"k8s.io/client-go/pkg/api/errors"
 	"k8s.io/client-go/pkg/api/unversioned"
