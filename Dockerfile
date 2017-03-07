@@ -1,1 +1,3 @@
-FROM golang:1.7.4-onbuild
+FROM scratch
+COPY . /app
+ENTRYPOINT ["/app"]

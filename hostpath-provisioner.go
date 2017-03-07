@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"github.com/mirusresearch/hostpath-provisioner/controller"
+	"hostpath-provisioner/controller"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/pkg/api/v1"
 	"k8s.io/client-go/pkg/types"
@@ -21,6 +21,10 @@ const (
 	resyncPeriod              = 15 * time.Second
 	exponentialBackOffOnError = false
 	failedRetryThreshold      = 5
+	leaseDuration = 15 * time.Second
+	renewDeadline= 15 * time.Second
+	retryPeriod = 15 * time.Second
+	termLimit = 15 * time.Second
 )
 
 type hostPathProvisioner struct {
@@ -122,6 +126,18 @@ func main() {
 
 	// Start the provision controller which will dynamically provision hostPath
 	// PVs
-	pc := controller.NewProvisionController(clientset, resyncPeriod, os.Getenv("PROVISIONER_NAME"), hostPathProvisioner, serverVersion.GitVersion, exponentialBackOffOnError, failedRetryThreshold)
+	pc := controller.NewProvisionController(
+		clientset, 
+		resyncPeriod, 
+		os.Getenv("PROVISIONER_NAME"), 
+		hostPathProvisioner, 
+		serverVersion.GitVersion, 
+		exponentialBackOffOnError, 
+		failedRetryThreshold,
+		leaseDuration,
+		renewDeadline,
+		retryPeriod,
+		termLimit)
+
 	pc.Run(wait.NeverStop)
 }

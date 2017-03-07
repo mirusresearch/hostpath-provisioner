@@ -25,8 +25,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mirusresearch/hostpath-provisioner/controller/leaderelection"
-	rl "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection/resourcelock"
+	"hostpath-provisioner/controller/leaderelection"
+	rl "hostpath-provisioner/controller/leaderelection/resourcelock"
+	// "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection"
+	// rl "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection/resourcelock"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/kubernetes/fake"
 	fakev1core "k8s.io/client-go/kubernetes/typed/core/v1/fake"

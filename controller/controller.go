@@ -25,8 +25,10 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"github.com/mirusresearch/hostpath-provisioner/controller/leaderelection"
-	rl "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection/resourcelock"
+	"hostpath-provisioner/controller/leaderelection"
+	rl "hostpath-provisioner/controller/leaderelection/resourcelock"
+	// "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection"
+	// rl "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection/resourcelock"
 	"k8s.io/client-go/kubernetes"
 	core_v1 "k8s.io/client-go/kubernetes/typed/core/v1"
 	"k8s.io/client-go/pkg/api"
