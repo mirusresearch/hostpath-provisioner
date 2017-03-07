@@ -27,8 +27,7 @@ import (
 	"fmt"
 	"reflect"
 	"time"
-
-	rl "github.com/kubernetes-incubator/nfs-provisioner/controller/leaderelection/resourcelock"
+	rl "github.com/mirusresearch/hostpath-provisioner/controller/leaderelection/resourcelock"
 	"k8s.io/client-go/pkg/api/errors"
 	"k8s.io/client-go/pkg/api/unversioned"
 	"k8s.io/client-go/pkg/util/runtime"

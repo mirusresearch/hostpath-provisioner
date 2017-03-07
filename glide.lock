@@ -1,5 +1,5 @@
-hash: 6fa2c84f1bd00d07bf4095b53a4d1c72f0d4afac54ea02fa7373a33bd5dcff8e
-updated: 2017-01-19T15:37:04.161550129-05:00
+hash: ed0f837743f7e52eb1a968fa25d063d91745677bfc877ada7312338412b893a4
+updated: 2017-03-07T15:40:43.81641862-06:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -52,7 +52,7 @@ imports:
   - proto
   - sortkeys
 - name: github.com/golang/glog
-  version: 23def4e6c14b4da8ac2ed8007337bc5eb5007998
+  version: 44145f04b68cf362d9c4df2182967c2275eaefed
 - name: github.com/golang/groupcache
   version: 02826c3e79038b59d737d3b1c0a1d937f71a4433
   subpackages:
@@ -68,7 +68,6 @@ imports:
 - name: github.com/kubernetes-incubator/nfs-provisioner
   version: 66e53b5a830820c304152761a3a019c2ffaefb22
   subpackages:
-  - controller
   - controller/leaderelection
   - controller/leaderelection/resourcelock
 - name: github.com/mailru/easyjson
@@ -77,6 +76,10 @@ imports:
   - buffer
   - jlexer
   - jwriter
+- name: github.com/mirusresearch/hostpath-provisioner
+  version: 02ef4279b9328dcbe8faa537027cf6d780979073
+  subpackages:
+  - controller
 - name: github.com/pborman/uuid
   version: ca53cad383cad2479bbba7f7a1a05797ec1386e4
 - name: github.com/PuerkitoBio/purell
@@ -138,25 +141,40 @@ imports:
   version: 89c60099837a47cfce19bd14e2d1f16c4670fd58
   subpackages:
   - discovery
+  - discovery/fake
   - kubernetes
+  - kubernetes/fake
   - kubernetes/typed/apps/v1beta1
+  - kubernetes/typed/apps/v1beta1/fake
   - kubernetes/typed/authentication/v1beta1
+  - kubernetes/typed/authentication/v1beta1/fake
   - kubernetes/typed/authorization/v1beta1
+  - kubernetes/typed/authorization/v1beta1/fake
   - kubernetes/typed/autoscaling/v1
+  - kubernetes/typed/autoscaling/v1/fake
   - kubernetes/typed/batch/v1
+  - kubernetes/typed/batch/v1/fake
   - kubernetes/typed/batch/v2alpha1
+  - kubernetes/typed/batch/v2alpha1/fake
   - kubernetes/typed/certificates/v1alpha1
+  - kubernetes/typed/certificates/v1alpha1/fake
   - kubernetes/typed/core/v1
+  - kubernetes/typed/core/v1/fake
   - kubernetes/typed/extensions/v1beta1
+  - kubernetes/typed/extensions/v1beta1/fake
   - kubernetes/typed/policy/v1beta1
+  - kubernetes/typed/policy/v1beta1/fake
   - kubernetes/typed/rbac/v1alpha1
+  - kubernetes/typed/rbac/v1alpha1/fake
   - kubernetes/typed/storage/v1beta1
+  - kubernetes/typed/storage/v1beta1/fake
   - pkg/api
   - pkg/api/errors
   - pkg/api/install
   - pkg/api/meta
   - pkg/api/meta/metatypes
   - pkg/api/resource
+  - pkg/api/testapi
   - pkg/api/unversioned
   - pkg/api/v1
   - pkg/api/validation/path
@@ -182,9 +200,18 @@ imports:
   - pkg/apis/certificates
   - pkg/apis/certificates/install
   - pkg/apis/certificates/v1alpha1
+  - pkg/apis/componentconfig
+  - pkg/apis/componentconfig/install
+  - pkg/apis/componentconfig/v1alpha1
   - pkg/apis/extensions
   - pkg/apis/extensions/install
   - pkg/apis/extensions/v1beta1
+  - pkg/apis/imagepolicy
+  - pkg/apis/imagepolicy/install
+  - pkg/apis/imagepolicy/v1alpha1
+  - pkg/apis/kubeadm
+  - pkg/apis/kubeadm/install
+  - pkg/apis/kubeadm/v1alpha1
   - pkg/apis/policy
   - pkg/apis/policy/install
   - pkg/apis/policy/v1beta1
@@ -197,9 +224,15 @@ imports:
   - pkg/auth/user
   - pkg/conversion
   - pkg/conversion/queryparams
+  - pkg/federation/apis/federation
+  - pkg/federation/apis/federation/install
+  - pkg/federation/apis/federation/v1beta1
   - pkg/fields
   - pkg/genericapiserver/openapi/common
+  - pkg/kubelet/qos
+  - pkg/kubelet/types
   - pkg/labels
+  - pkg/master/ports
   - pkg/runtime
   - pkg/runtime/serializer
   - pkg/runtime/serializer/json
@@ -215,6 +248,7 @@ imports:
   - pkg/util
   - pkg/util/cert
   - pkg/util/clock
+  - pkg/util/config
   - pkg/util/diff
   - pkg/util/errors
   - pkg/util/flowcontrol
@@ -243,7 +277,9 @@ imports:
   - plugin/pkg/client/auth/gcp
   - plugin/pkg/client/auth/oidc
   - rest
+  - testing
   - tools/cache
+  - tools/cache/testing
   - tools/clientcmd/api
   - tools/metrics
   - tools/record

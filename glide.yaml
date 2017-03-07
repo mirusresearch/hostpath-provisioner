@@ -1,8 +1,7 @@
 package: git hostpath-provisioner
 import:
 - package: github.com/golang/glog
-- package: github.com/mirusresearch/hostpath-provisioner
-  version: v0.2.0
+- package:  github.com/mirusresearch/hostpath-provisioner
   subpackages:
   - controller
 - package: k8s.io/client-go
