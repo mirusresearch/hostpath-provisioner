@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"github.com/kubernetes-incubator/nfs-provisioner/controller"
+	"github.com/mirusresearch/hostpath-provisioner/controller"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/pkg/api/v1"
 	"k8s.io/client-go/pkg/types"
@@ -32,7 +32,7 @@ type hostPathProvisioner struct {
 	identity types.UID
 }
 
-func NewHostPathProvisioner(string pvDir) controller.Provisioner {
+func NewHostPathProvisioner(pvDir string) controller.Provisioner {
 	return &hostPathProvisioner{
 		pvDir:    pvDir,
 		identity: uuid.NewUUID(),
